@@ -1,0 +1,575 @@
+@use "./base.scss";
+
+// کانتنت متا
+.content-meta>span {
+    background-color: var(--lightgray);
+    border-radius: 4px;
+    padding: 1px 6px 1px 6px;
+    font-size: 0.9em;
+}
+
+.content-meta {
+    color: var(--darkgray);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+  
+// فهرست مطالب
+    .toc {
+        border-radius: 5px;
+        border: 1px solid var(--lightgray);
+        padding: 12px; 
+        font-size: 0.9rem;
+    }
+    
+    // #toc-content ul {
+    //     max-height: 400px;
+    // }
+    
+    
+
+    #toc-content .depth-0 {
+        list-style: disc;
+        list-style-position: inside;
+
+    }
+    
+    #toc-content .depth-1 {
+        padding: 0px !important;
+        padding-right: 1rem !important;
+        list-style: circle;
+        list-style-position: inside;
+    }
+    
+    #toc-content .depth-2 {
+        padding: 0px !important;
+        padding-right: 2rem !important;
+    }
+    
+    #toc-content .depth-3 {
+        padding: 0px !important;
+        padding-right: 3rem !important;
+    }
+
+    #toc-content ul>li>a {
+        margin-right: -12px;
+        opacity: .45;
+    }
+
+    @media (max-width: 1510px) {
+        .mobile-only.toc {
+            display: block;
+        }
+    }
+
+ 
+// بک لینک
+    .backlinks>ul {
+        border-radius: 5px;
+        border: 1px solid var(--lightgray);
+        list-style: disc;
+        padding-right: 35px;
+        padding-top: 10px;
+        padding-left: 10px;
+        font-size: 0.95rem;
+        // max-height: 250px;
+    }
+
+    ul.overflow:after,ol.overflow:after {
+        display: none;
+    }
+
+
+
+// تایپو گرافی
+   body {
+        font-size: 1.1em;
+    }
+
+   p {
+        line-height: 2rem;
+   } 
+
+   li {
+        line-height: 2rem; // برای اصلاح فاصله بین خطوط لیست ها مثل بولت پوینت
+    }
+
+   sup {
+    vertical-align: middle; //اگه توی متن از پانوشت استفاده شده باشه باعث میشه فاصله بین خطوط به هم نریزه
+    }
+    
+    h2 {
+        font-size: 1.6rem;
+        margin-top: 1rem;
+        margin-bottom: -0.2rem;
+        border-bottom: 1px solid var(--lightgray);
+        padding-bottom: 0.2em;
+    }
+
+    h3 {
+        font-size: 1.30rem;
+        margin-top: 1rem;
+        margin-bottom: -0.2rem;
+    }
+
+    h4,
+    h5,
+    h6 {
+      font-size: 1.1rem;
+      margin-top: 1rem;
+      margin-bottom: -0.2rem;
+    }
+
+
+
+// بلوک کد
+    pre {
+        background: #afafaf1a;
+    }
+
+    pre>code {
+        overflow-x: auto;
+    }
+
+    code {
+        direction: ltr !important;
+        font-family: var(--bodyFont);
+    }
+
+
+
+// دیاگرام
+    .mermaid {
+        direction: rtl !important;
+    }
+
+    pre:has(>code.mermaid) {
+        background-color: transparent;
+    }
+
+    .nodeLabel {
+        font-family: var(--bodyFont);
+    }
+
+    pre:has(>code.mermaid) .clipboard-button {
+        display: none;
+    }
+
+
+
+// تغییر متن پانوشت
+    h2#footnote-label{
+        visibility: hidden;
+    }
+    
+    h2#footnote-label::after{
+        content: "پانوشت‌ها";
+        visibility: visible;
+        display: block;
+        direction: rtl !important;
+            
+    }
+
+
+
+// دکمه
+    //دیفالت - توپر
+    .my-button {
+    background-color: var(--tertiary);
+    color: white;
+    padding: 8px 20px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-family: var(--bodyFont);
+    font-size: 1em;
+    }  
+
+    .my-button:hover {
+        background-color: var(--secondary);
+    }
+
+    // تو خالی
+    .button2 {
+        background-color: transparent;
+        color: var(--darkgray);
+        padding: 8px 15px;
+        border: 1px solid var(--darkgray);
+        border-radius: 50px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        font-family: var(--bodyFont);
+        font-size: 0.9em;
+        } 
+    
+    .button2:hover {
+        background-color: var(--tertiary);
+        color: white;
+        border: 1px solid var(--secondary);
+        }
+
+    
+
+
+
+// بلوک نقل قول
+
+blockquote {
+    background-color: #5960cf0a;
+    padding: 1px 20px 1px 20px;
+    border-radius: 10px;
+}
+
+
+
+// تصاویر
+
+    // اینورت رنگ تصاویر 
+    [saved-theme="dark"] img.invert {
+        filter: invert(1);
+    }
+
+    // بک گراند برای حالت دارک تصاویر کاور
+    [saved-theme="dark"] .cover-bg {
+        background-color: #a5a5a526;
+    }
+
+    // وسطچین کردن تصاویر
+    p img {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+
+
+// فوتر
+    footer {
+        opacity: 1;
+    }
+
+    .new-footer {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        align-items: baseline;
+    }
+
+    .group1 {
+        text-align: right;
+        display: flex;
+        gap: 25px;
+    }
+
+    .group2 {
+        text-align: left;
+        display: flex;
+        gap: 25px;
+    }
+
+    .footer-link {
+        display: inline-block;
+        width: 1.3em;
+        height: 1.3em;
+    }
+
+    .footer-svg {
+        opacity: 0.65;
+        filter: grayscale(100%);
+        transition: filter 0.3s ease;
+        transition: scale .3s ease;
+    }
+
+    .footer-svg:hover {
+        filter: grayscale(0%);
+        scale: 1.1;
+        opacity: 1;
+    }
+
+    
+
+
+
+// نمای کارتی جدول - حالت گرید
+
+    // استایل پایه
+    .card-g {
+        tr {
+            display: flex;
+            flex-direction: column;
+            border: 1px solid #b5b5b526;
+            background-color: #b5b5b518;
+            border-radius: 8px;
+            font-size: 0.9em;
+            line-height: 1.5em;
+            overflow: hidden;
+            padding: 10px;
+        }
+
+        .table-container>table>* {
+            display: grid;
+            gap: 15px;
+            grid-template-columns: repeat(4, 1fr);
+        }
+
+        .table-container>table {
+            margin: 0;
+            width: 100%;
+        }
+
+        td {
+            text-align: center;
+            padding: 0;
+        }
+
+
+        .table-container>table td img {
+            margin: 0;
+
+            
+        }
+
+        .table-container>table>thead {
+            display: none;
+        }
+
+    }
+
+    // تعداد ستون
+    .c-2 .table-container>table>* {grid-template-columns: repeat(2, 1fr);}
+    .c-3 .table-container>table>* {grid-template-columns: repeat(3, 1fr);}
+    .c-5 .table-container>table>* {grid-template-columns: repeat(5, 1fr);}
+    .c-6 .table-container>table>* {grid-template-columns: repeat(6, 1fr);}
+
+    // ستون ها در تبلت
+    @media (max-width: 768px) {
+        .card-g .table-container>table>* {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+
+    // ستون ها در موبایل        
+    @media (max-width: 480px) {
+        .card-g .table-container>table>* {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+
+// نمای کارتی جدول - حالت اسکرول
+
+    // استایل پایه
+    .card-s {
+        tr {
+            display: flex;
+            flex-direction: column;
+            border: 1px solid #b5b5b526;;
+            background-color: #b5b5b518;
+            border-radius: 8px;
+            padding: 10px;
+            font-size: 0.9em;
+            line-height: 1.5em;
+            overflow: hidden;
+            width: 150px;
+            justify-content: space-around;
+        }
+
+        .table-container>table>* {
+            display: flex;
+            gap: 15px;
+            overflow-x: auto;
+            padding: 10px 0 10px 0;
+            margin: 0;
+        }
+
+        .table-container>table {
+            margin: 0;
+        }
+
+        td {
+            text-align: center;
+            padding: 0;
+            margin-bottom: 0.5em;
+        }
+
+        .table-container>table td img {
+            margin: 0;
+        }
+
+        .table-container>table>thead {
+            display: none;
+        }
+    }
+    
+    // تنظیم عرض
+    .w100 tr {width: 100px;}
+    .w200 tr {width: 200px;}
+    .w300 tr {width: 300px;}
+    .full tr {width: 100%;}
+
+
+
+// استایل های سفارشی مشترک: هم گرید هم اسکرول
+
+    // نمایش متن در یک سطر و مخفی کردن کاراکترهای اضافی
+    .nowarp td {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    // نمایش متن در دو سطر و مخفی کردن کاراکترهای اضافی
+    .nowarp2 td {
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        -webkit-line-clamp: 2;
+    }
+
+    // نسبت تصویر
+    .c1-1 .table-container>table td img {
+        aspect-ratio: 1 / 1;
+        object-fit: contain;
+        background-color: #a5a5a526;
+    }
+
+    .c16-9 .table-container>table td img {
+        aspect-ratio: 16 / 9;
+        object-fit: contain;
+        background-color: #a5a5a526;
+    }
+
+
+// نمای کارتی - برای در یک نگاه
+    .overview-3 {
+        display: grid;
+        column-gap: 20px;
+        grid-template-columns: repeat(3, 1fr);
+        justify-items: center;
+    }
+
+    .overview-4 {
+        display: grid;
+        column-gap: 20px;
+        grid-template-columns: repeat(4, 1fr);
+        justify-items: center;
+    }
+
+    @media (max-width: 480px) {
+        .overview-3, .overview-4  {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+
+// جداول عادی
+.fill-table .table-container>table{
+    width: -webkit-fill-available;
+}
+
+
+
+
+
+
+// تب
+
+    .tabs {
+        width: 100%;
+        margin: 0 auto;
+        border: 1px solid var(--lightgray);
+        border-radius: 8px;
+    }
+
+    .tab-header {
+        display: flex;
+        border-bottom: 1px solid var(--lightgray);
+    }
+
+    .tab-link {
+        padding: 14px 16px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+
+    .tab-link:hover {
+        background-color: var(--lightgray);
+    }
+
+    .tab-link.active {
+        border-bottom: 2px solid var(--tertiary);
+        font-weight: bold;
+    }
+
+    .tab-content {
+        padding: 16px;
+    }
+
+    .tab-pane {
+        display: none;
+    }
+
+    .tab-pane.active {
+        display: block;
+    }
+
+
+
+// صفحه 404
+    div.img-404 {
+        background-image: url(/img/ops.gif);
+        width: 100%;
+        aspect-ratio: 16 / 9;
+        background-position: center;
+        background-size: cover;
+    }
+
+    [saved-theme="light"] div.img-404 {
+        mix-blend-mode: multiply;
+    }
+    [saved-theme="dark"] div.img-404 {
+        mix-blend-mode: normal;
+    }
+
+
+
+
+// صفحه بندی
+    // ریسپانسیو
+
+    @media (max-width: 1510px) {
+        .page>#quartz-body {
+            flex-direction: column-reverse;
+        }
+
+        .page>#quartz-body .sidebar.left {
+            align-items: normal;
+            flex-direction: column;
+            gap: 1em;
+        }
+
+        .page>#quartz-body .sidebar.right>* {
+            min-width: fit-content;
+        }
+
+        .page>#quartz-body .sidebar.right {
+            align-items: center;
+            flex-wrap: nowrap;
+        }
+    }
+
+    // جستجو
+    .search {
+        max-width: none;
+    }
+
+    // دارک مود
+    .darkmode {
+        max-width: fit-content;
+    }
+
+    
